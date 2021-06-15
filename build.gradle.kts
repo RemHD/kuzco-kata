@@ -9,10 +9,13 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("org.mockito:mockito-core:3.+")
+    implementation("com.google.code.gson:gson:2.8.5")
 }
 
 tasks.test {

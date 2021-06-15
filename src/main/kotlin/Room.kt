@@ -1,6 +1,6 @@
 data class Room(
-    val etage: Number,
-    val chambre: Number,
+    val etage: Int,
+    val chambre: Int,
     val description: String,
-    val capacite: Number
+    val capacite: Int
 )
