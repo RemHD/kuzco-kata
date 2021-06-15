@@ -14,7 +14,7 @@ class GetAllRoomTest {
         val roomRepository = mock(RoomRepository::class.java)
         val getAllRoom = GetAllRoom(roomRepository)
         val expectedRoomList = arrayListOf<Room>()
-        expectedRoomList.add(Room(1, 1, "1 king size bed - A/C - Wi-Fi - private bathroom", 1))
+        expectedRoomList.add(Room(1, 1, "1 king size bed - A/C - Wi-Fi - private bathroom", "1 guest"))
         given(getAllRoom.execute()).willReturn(expectedRoomList)
 
         // when
