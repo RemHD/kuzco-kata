@@ -1,3 +1,5 @@
+package kuzcoMain.Hexagon
+
 data class Room(
     val etage: Int,
     val chambre: Int,
