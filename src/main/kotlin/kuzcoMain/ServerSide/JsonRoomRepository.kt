@@ -18,4 +18,10 @@ class JsonRoomRepository : RoomRepository {
     override fun saveAReservation(reservation: Reservation) {
         TODO("Not yet implemented")
     }
+
+    override fun getOne(roomNumber: Number): Room? {
+        TODO("Not yet implemented")
+    }
+
+
 }

@@ -33,4 +33,23 @@ class PlaceAReservationTest {
         assertThat(result).isEqualTo(expectedReservation)
 
     }
+
+    @Test
+    fun `placeAReservation when room does not exist then should not place a reservation`() {
+        // given
+        val roomRepository = Mockito.mock(RoomRepository::class.java)
+        val reservationPlacer = PlaceAReservation(roomRepository)
+
+        // when
+        val result = reservationPlacer.execute(startDate = Date(),
+            endDate = Date(),
+            nbClient = 2,
+            roomNumber = 999
+        )
+
+        // then
+        then(roomRepository).should().getOne(999)
+        then(roomRepository).shouldHaveNoMoreInteractions()
+        assertThat(result).isEqualTo(null)
+    }
 }

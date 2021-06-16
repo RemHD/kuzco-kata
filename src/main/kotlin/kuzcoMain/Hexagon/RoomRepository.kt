@@ -6,4 +6,5 @@ import kuzcoMain.Hexagon.models.Room
 interface RoomRepository {
     fun getAll(): ArrayList<Room>
     fun saveAReservation(reservation: Reservation)
+    fun getOne(roomNumber: Number): Room?
 }
