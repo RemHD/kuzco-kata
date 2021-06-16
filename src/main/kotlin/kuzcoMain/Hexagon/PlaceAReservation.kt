@@ -24,7 +24,6 @@ open class PlaceAReservation(private val repository: RoomRepository) {
                 } else {
                     null
                 }
-
             }
         } catch (error: IOException) {
             throw error

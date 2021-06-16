@@ -6,6 +6,8 @@ import kuzcoMain.Hexagon.models.Room
 import kuzcoMain.Hexagon.RoomRepository
 import kuzcoMain.Hexagon.models.Reservation
 import java.io.File
+import java.util.*
+import kotlin.collections.ArrayList
 
 class JsonRoomRepository : RoomRepository {
     override fun getAll(): ArrayList<Room> {
@@ -20,6 +22,10 @@ class JsonRoomRepository : RoomRepository {
     }
 
     override fun getOne(roomNumber: Number): Room? {
+        TODO("Not yet implemented")
+    }
+
+    override fun getWithinDate(startDate: Date, endDate: Date): ArrayList<Room> {
         TODO("Not yet implemented")
     }
 

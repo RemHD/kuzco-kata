@@ -1,6 +1,6 @@
-import kuzcoMain.Hexagon.GetAllRoom
+package kuzcoMain.Hexagon
+
 import kuzcoMain.Hexagon.models.Room
-import kuzcoMain.Hexagon.RoomRepository
 import kuzcoMain.Hexagon.models.Reservation
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
