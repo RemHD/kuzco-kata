@@ -1,4 +1,4 @@
-package kuzcoMain.Hexagon
+package kuzcoMain.Hexagon.models
 
 data class Room(
     val etage: Number,

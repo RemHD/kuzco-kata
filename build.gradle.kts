@@ -16,7 +16,9 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.assertj:assertj-core:3.19.0")
     testImplementation("org.mockito:mockito-core:3.+")
+    implementation("org.xerial:sqlite-jdbc:3.30.1")
     implementation("com.google.code.gson:gson:2.8.5")
+    implementation("org.jetbrains.exposed:exposed-core:0.32.1")
 }
 
 tasks.test {
