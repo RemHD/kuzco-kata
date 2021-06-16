@@ -4,6 +4,7 @@ import kuzcoMain.Hexagon.models.Reservation
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.mockito.BDDMockito.given
+import org.mockito.BDDMockito.then
 import org.mockito.Mockito
 import java.util.*
 
@@ -20,15 +21,6 @@ class PlaceAReservationTest {
             roomNumber = 102
         )
 
-        given(
-            reservationPlacer.execute(
-                startDate = Date(),
-                endDate = Date(),
-                nbClient = 2,
-                roomNumber = 102
-            )
-        ).willReturn(expectedReservation)
-
         //when
         val result = reservationPlacer.execute(startDate = Date(),
             endDate = Date(),
@@ -37,7 +29,7 @@ class PlaceAReservationTest {
         )
 
         //then
-//        then(roomRepository).shouldOnly().saveAReservation(expectedReservation)
+        then(roomRepository).should().saveAReservation(expectedReservation)
         assertThat(result).isEqualTo(expectedReservation)
 
     }

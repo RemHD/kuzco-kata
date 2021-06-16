@@ -14,3 +14,4 @@ x 'Fabriquer' la sortie
 - Modifier/Ajouter modeles -> gestion reservation
 - Action de reservation
 - Gestion disponibilite des chambres
+- rendre une chambre non disponible
