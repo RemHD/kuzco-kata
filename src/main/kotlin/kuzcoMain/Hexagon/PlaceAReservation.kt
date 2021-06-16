@@ -1,6 +1,7 @@
 package kuzcoMain.Hexagon
 
 import kuzcoMain.Hexagon.models.Reservation
+import kuzcoMain.Hexagon.models.Room
 import java.io.IOException
 import java.util.*
 
@@ -11,21 +12,30 @@ open class PlaceAReservation(private val repository: RoomRepository) {
             return if (room == null) {
                 null
             } else {
-                val result = Reservation(
-                    startDate = startDate,
-                    endDate = endDate,
-                    nbIencli = nbClient,
-                    roomNumber = roomNumber
-                )
-                repository.saveAReservation(result)
-                result
+                if (checkRoomAvailability(room, startDate, endDate)) {
+                    val result = Reservation(
+                        startDate = startDate,
+                        endDate = endDate,
+                        nbIencli = nbClient,
+                        roomNumber = roomNumber
+                    )
+                    repository.saveAReservation(result)
+                    result
+                } else {
+                    null
+                }
+
             }
         } catch (error: IOException) {
             throw error
         }
     }
 
-    /*private fun checkRoomAvailability(roomNumber: Int, startDate: Date, endDate: Date): Boolean {
-
-    }*/
+    private fun checkRoomAvailability(room: Room, startDate: Date, endDate: Date): Boolean =
+        room.Reservation.fold(true) { acc: Boolean, reservation: Reservation ->
+            if (
+                (startDate >= reservation.endDate && endDate > reservation.endDate) ||
+                (startDate < reservation.startDate && endDate <= reservation.startDate)
+            ) acc else false
+        }
 }

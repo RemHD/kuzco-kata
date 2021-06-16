@@ -4,5 +4,6 @@ data class Room(
     val etage: Number,
     val chambre: Number,
     val description: String,
-    val capacite: String
+    val capacite: String,
+    val Reservation: ArrayList<Reservation>
 )
